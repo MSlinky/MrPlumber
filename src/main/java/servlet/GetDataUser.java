@@ -102,6 +102,7 @@ public class GetDataUser extends HttpServlet {
             }
         }
         else if (action.equals("save")){
+            System.out.println("save");
             UsuarioDAO usuario = new UsuarioDAO(session);
             usuario.saveEvento(email,clave);
         }

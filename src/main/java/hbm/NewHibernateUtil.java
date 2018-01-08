@@ -48,12 +48,9 @@ public class NewHibernateUtil {
     
     public static Session getLocalSession(){
         Session session = (Session) localSession.get();
-        System.out.println("___"+session);
         if(session == null){
             session = sessionFactory.openSession();
-            System.out.println("___"+session);
             localSession.set(session);
-            System.out.println("___"+(Session) localSession.get());
             System.out.println("New sesion iniciada");
         }
         return session;

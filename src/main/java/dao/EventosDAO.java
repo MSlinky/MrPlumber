@@ -38,6 +38,20 @@ public class EventosDAO {
        }
        return null;
    }
+      public List<Eventos> getToday(String date){
+           
+       //Transaction tx = session.beginTransaction();  
+       try{
+           List<Eventos> listaDeEventos = (List<Eventos>)session.createCriteria(Eventos.class).list();
+           return listaDeEventos;
+       }catch(ClassCastException e){
+           System.out.println("Valores vacios");
+           System.out.println(e);
+       }finally{
+         // tx.commit();
+       }
+       return null;
+   }
    public boolean saveEvento(int id,String name,String location,String text,String startDate,String endDate){
        Eventos evento = new Eventos();
        evento.setIdEventos(id);
