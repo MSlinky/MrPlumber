@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <!--Se configura el driver, la url donde esta la base de datos, el usuario y la contraseña-->
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://a07yd3a6okcidwap.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/zbxv4rd7u4k5zprr?zeroDateTimeBehavior=convertToNull </property>
+    <property name="hibernate.connection.username">b3vnhp4zvi06sw8j</property>
+    <property name="hibernate.connection.password">m6m3bx9efoerag9h</property>
+    <!--<property name="hibernate.current_session_context_class">thread</property>-->
+    <mapping class="pojo.Usuario"/>
+    <mapping class="pojo.TipoUsuario"/>
+    <mapping class="pojo.Eventos"/>
+  </session-factory>
+</hibernate-configuration>
+<!--
+
+    <property name="hibernate.connection.url">jdbc:mysql://t89yihg12rw77y6f.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/t836uopkeinehoia?zeroDateTimeBehavior=convertToNull </property>
+    <property name="hibernate.connection.username">b05z1rvhwv35tbif</property>
+    <property name="hibernate.connection.password">nyhpok6fe7yck1ya</property>
+
+    <property name="hibernate.connection.url">jdbc:mysql://a07yd3a6okcidwap.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/zbxv4rd7u4k5zprr?zeroDateTimeBehavior=convertToNull</property>
+    <property name="hibernate.connection.username">b3vnhp4zvi06sw8j</property>
+    <property name="hibernate.connection.password">v4qjuwhyo330m24k</property>-->
