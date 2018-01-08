@@ -9,6 +9,7 @@ import hbm.NewHibernateUtil;
 import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.criterion.Restrictions;
 import pojo.Eventos;
 
 /**
@@ -38,6 +39,23 @@ public class EventosDAO {
        }
        return null;
    }
+   
+    public List<Eventos> getToday(String date){
+           
+        
+       try{
+           List<Eventos> listaDeEventos = (List<Eventos>)session.createCriteria(Eventos.class)
+                   .add(Restrictions.eq("StartDate", date )).list();
+           return listaDeEventos;
+       }catch(ClassCastException e){
+           System.out.println("Valores vacios");
+           System.out.println(e);
+       }finally{
+         // (Usuario)session.createCriteria(Usuario.class).add(Restrictions.eq("clave", clave)).uniqueResult();
+       }
+       return null;
+   }
+   
    public boolean saveEvento(int id,String name,String location,String text,String startDate,String endDate){
        Eventos evento = new Eventos();
        evento.setIdEventos(id);
