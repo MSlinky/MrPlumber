@@ -15,7 +15,7 @@ ajax();
 
 function ajax() {
     $.ajax({
-        url: "GetDataEvent",
+        url: "GetDataEventToday",
         type: 'POST',
         success: function (data) {
             console.log(data);

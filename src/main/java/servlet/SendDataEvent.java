@@ -72,20 +72,10 @@ public class SendDataEvent extends HttpServlet {
                 endDate + "\n" 
                 );
         
-        
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yy hh:mi:ss");
-        Date str = new Date();
-        Date end = new Date();
-        
-        try {
-            str= sdf.parse(startDate);
-            end= sdf.parse(endDate);
-        } catch (ParseException ex) {
-            Logger.getLogger(SendDataEvent.class.getName()).log(Level.SEVERE, null, ex);
-        }
+  
         
         EventosDAO evento = new EventosDAO(session);
-        evento.saveEvento(id,name,location,text,str.toString(),end.toString());
+        evento.saveEvento(id,name,location,text,startDate,endDate);
         
         //System.out.println(array.getJSONObject(0).get("id").toString());
         /*HttpSession misession = (HttpSession) request.getSession();

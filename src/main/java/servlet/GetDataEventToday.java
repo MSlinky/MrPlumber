@@ -90,7 +90,9 @@ public class GetDataEventToday extends HttpServlet {
         System.out.println(data);
         if (misession.getAttribute("sesion").equals(true)){
             
+            System.out.println("event_");
             EventosDAO eventos = new EventosDAO(session);
+            System.out.println("eventos");
             JSONObject json = new JSONObject();
             json.put("resultado", true);
             json.put("data", eventos.getToday(data));
