@@ -11,6 +11,7 @@ function enviar_ajax(datos, link, callBack) {
         error: function(request, error) {
             alert("Error ingresar la informacion obligatoria");
             console.log([request, error]);
+            NProgress.done();
         }
     });
 }

@@ -10,6 +10,7 @@ function enviar_ajax(datos, link, callBack) {
         },
         error: function(request, error) {
             console.log([request, error]);
+            NProgress.done();
         }
     });
 }
@@ -54,7 +55,6 @@ function actTableCli(response) {
 }
 
 function buttonEvent(event) {
-    console.log("Aaaaa");
     if(event.target.name == "EliminarCliente" && !confirm("Eliminar")){
         return false;
     }
@@ -136,7 +136,7 @@ function charge() {
         autoUnmask: true
     });
     $('.formatRFC').inputmask({
-        regex: "^([A-ZÑa-zñ&]{3,4})[0-9]{2}(?:0[1-9]|1[0-2])(?:0[1-9]|1[0-9]|2[0-9]|3[01])([A-Za-z\\d]{2})([A\\d])$",
+        regex: "(([A-Z]|[a-z]|\s){1})(([A-Z]|[a-z]){3})([0-9]{6})((([A-Z]|[a-z]|[0-9]){3}))",
         autoUnmask: true
     });
     $('.formatPostalCode').inputmask("99999[-9999]", {
@@ -189,11 +189,15 @@ $(window).ready(function() {
 
     $('#form_clientes').submit(function(event) {
         event.preventDefault();
-        sendForm(event.target, "GetDataClient", actTableCli);
-        $('#clientesName').html('Alta clientes');
-        $($('#form_clientes').find('#cancelar').siblings('input'))[0].value = "Guardar cliente";
-        $('#form_clientes').find('#id')[0].value = "-1";
-        event.target.reset();
+        if( $('.formatRFC').val().length == 13 || $('.formatRFC').val().length == 0 ){
+            sendForm(event.target, "GetDataClient", actTableCli);
+            $('#clientesName').html('Alta clientes');
+            $($('#form_clientes').find('#cancelar').siblings('input'))[0].value = "Guardar cliente";
+            $('#form_clientes').find('#id')[0].value = "-1";
+            event.target.reset();
+        }else{
+            alert("RFC Erroneo");
+        }
     });
 
     $('.btn_cancelarCliente').click(function(event) {

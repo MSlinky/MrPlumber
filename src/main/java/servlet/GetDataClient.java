@@ -98,7 +98,7 @@ public class GetDataClient extends HttpServlet {
                 
                 int r = objConexion.executeUpdate();
                 if(r > 0){
-                    objConexion.prepareStatement("SELECT cliente.id, cliente.nombre, cliente.apellido, cliente.telefono, cliente.origen, cliente.celular, cliente.email, cliente.rfc, estado.nombre AS estado, ciudad.nombre AS ciudad, cliente.colonia, cliente.calle, cliente.cp, cliente.referencia FROM cliente, estado, ciudad WHERE cliente.idestado=estado.id AND cliente.idciudad=ciudad.id;");
+                    objConexion.prepareStatement("SELECT cliente.id, cliente.nombre, cliente.apellido, cliente.telefono, cliente.origen, cliente.clienteCuenta, cliente.celular, cliente.email, cliente.rfc, estado.nombre AS estado, ciudad.nombre AS ciudad, cliente.colonia, cliente.calle, cliente.cp, cliente.referencia FROM cliente, estado, ciudad WHERE cliente.idestado=estado.id AND cliente.idciudad=ciudad.id;");
                     objConexion.executeQuery();
                     Json j = new Json();
                     out.print( j.ListToArrayJson( objConexion.QueryToList() ) );
