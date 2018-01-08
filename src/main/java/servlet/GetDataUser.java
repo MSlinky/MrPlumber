@@ -84,6 +84,7 @@ public class GetDataUser extends HttpServlet {
         String email=request.getParameter("correo");
         String clave=request.getParameter("contraseña");
         
+        System.out.println("___getDataUser");
         if(action.equals("get")){
             if (misession.getAttribute("sesion").equals(true)){
             
