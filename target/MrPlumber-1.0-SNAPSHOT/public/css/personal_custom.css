@@ -1,0 +1,139 @@
+/*botones*/
+    .btn{
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+
+    table td, table th{
+        border: 1px solid #ddd;
+    }
+
+    table.dataTable.display tbody tr:hover{
+        background-color: #E7E7E7;
+        color: black;
+    }
+/*botones*/
+
+form .submit{
+    text-align: center;
+}
+
+form label{
+    text-align: left !important;
+}
+
+.form-control{
+    border-radius: 4px;
+}
+
+.form-control:focus {
+    border-color: #66afe9 !important;
+}
+
+.right_col{
+	padding: 5px 5px !important;
+}
+
+.x_panel{
+	padding: 3px 5px;
+}
+
+.panel_toolbox{
+    min-width: 0;
+}
+
+.alert-danger{
+    display: none;
+    position: absolute;
+    top: 100px;
+    margin: 0 20px;
+    z-index: 100;
+}
+
+.nav-sm .nav.child_menu li.active, .nav-sm .nav.side-menu li.active-sm, .nav.side-menu > li.active, .nav.side-menu > li.current-page{
+	border-right: 5px solid #f67400;
+}
+
+#sidebar-menu .fa{
+	color: #f67400 !important;
+}
+
+footer{
+	background-color: #F7F7F7;
+}
+.buscar:hover .contentResult{
+    display: block;
+}
+.contentResult{
+    display: none;
+    max-height: 200px;
+    overflow: auto;
+    position: absolute;
+    z-index: 100;
+    background: white;
+    left: 10px;
+    width: calc(100% - 20px);
+}
+#buscarCliente:hover .contentResultClient{
+    display: block;
+}
+.contentResultClient{
+    display: none;
+    max-height: 200px;
+    overflow: auto;
+    position: absolute;
+    z-index: 100;
+    background: white;
+    left: 10px;
+    width: calc(100% - 20px);
+}
+.results{
+    border-bottom: solid black 1px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+.results:hover{
+    background-color: #BBDAFF;
+}
+/*formMessage*/
+    input:focus + .formMessage {
+        display: block;
+    }
+    .formMessage {
+        display: none;
+        position: absolute;
+        z-index: 1;
+        padding: 10px;
+        border-radius: 10px;
+        color: white;
+        width: 100px;
+        text-align: center;
+        font-size: 12px;
+        background: #2A3F54;
+        right: 20px;
+    }
+
+    .formMessage::after {
+        content: '';
+        border-bottom: 10px solid #2A3F54;
+            border-right: 10px solid transparent;
+            border-left: 10px solid transparent;
+            position: absolute;
+            right: 10%;
+            top: -8px;
+    }
+    
+    .event-tooltip-content:not(:last-child) {
+        border-bottom:1px solid #ddd;
+        padding-bottom:5px;
+        margin-bottom:5px;
+    }
+
+    .event-tooltip-content .event-title {
+        font-size:18px;
+    }
+
+    .event-tooltip-content .event-location {
+        font-size:12px;
+    }
+/*formMessage*/

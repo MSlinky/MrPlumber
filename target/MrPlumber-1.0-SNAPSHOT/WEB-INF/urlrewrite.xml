@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE urlrewrite PUBLIC "-//tuckey.org//DTD UrlRewrite 4.0//EN"
+        "http://www.tuckey.org/res/dtds/urlrewrite4.0.dtd">
+
+<urlrewrite>
+    <rule>
+        <from>^/$</from>
+        <to>./html/index.jsp</to>
+    </rule>
+    <rule>
+        <from>^/(Inicio)$</from>
+        <to>./html/index.jsp</to>
+    </rule>
+    <rule>
+        <from>^/(Productos)$</from>
+        <to>./html/productos.jsp</to>
+    </rule>
+    <rule>
+        <from>^/(Carrito)$</from>
+        <to>./html/carrito.jsp</to>
+    </rule>
+    <rule>
+        <from>^/(Compras)$</from>
+        <to>./html/compras.jsp</to>
+    </rule> 
+    <rule>
+        <from>^/(Clientes)$</from>
+        <to>./html/clientes.jsp</to>
+    </rule>    
+    <rule>
+        <from>^/(Socios)$</from>
+        <to>./html/socios.jsp</to>
+    </rule>
+    <rule>
+        <from>^/(Ventas)$</from>
+        <to>./html/ventas.jsp</to>
+    </rule>  
+    <rule>
+        <from>^/(Login)$</from>
+        <to>./html/login.jsp</to>
+    </rule>
+    <rule>
+        <from>^/(Agenda)$</from>
+        <to>./html/agenda.jsp</to>
+    </rule>
+    <rule>
+        <from>^/(Usuarios)$</from>
+        <to>./html/usuarios.jsp</to>
+    </rule>
+</urlrewrite>
