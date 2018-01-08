@@ -142,20 +142,20 @@
                     </div>
                     <div class="form-group col-md-4 col-sm-8 col-xs-12">
                         <label class="control-label" for="first-name">Cantidad en el almac&eacute;n<span class="required">*</span></label>
-                        <input type="text" class="fomatNumber form-control" name="cantidadAlmacen" placeholder="Cantidad almac&eacute;n" >
+                        <input type="text" class="fomatNumber form-control" name="cantidadAlmacen" required="required" placeholder="Cantidad almac&eacute;n" >
                     </div>
                     <div class="form-group col-md-4 col-sm-8 col-xs-12">
                         <label class="control-label" for="first-name">Costo<span class="required">*</span></label>
-                        <input id="costo" type="text" class="fomatMoney form-control" style="text-align: right;" name="costo" value="$ 0.00">
+                        <input id="costo" type="text" class="fomatMoney form-control" required="required" style="text-align: right;" name="costo">
                     </div>
                     <div class="form-group col-md-4 col-sm-8 col-xs-12">
                         <label class="control-label" for="first-name">Precio publico<span class="required">*</span></label>
-                        <input id="precioPublico" type="text" class="fomatPorcentaje form-control" style="text-align: right;" name="precioPublico">
+                        <input id="precioPublico" type="text" class="fomatPorcentaje form-control" required="required" style="text-align: right;" name="precioPublico">
                         <div class="formMessage"></div>
                     </div>
                     <div class="form-group col-md-4 col-sm-8 col-xs-12">
                         <label class="control-label" for="first-name">Precio socio<span class="required">*</span></label>
-                        <input id="precioSocios" type="text" class="fomatPorcentaje form-control" style="text-align: right;" name="precioSocio">
+                        <input id="precioSocios" type="text" class="fomatPorcentaje form-control" required="required" style="text-align: right;" name="precioSocio">
                         <div class="formMessage"></div>
                     </div>
                     <div class="form-group col-md-4 col-sm-8 col-xs-12">

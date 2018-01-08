@@ -109,10 +109,10 @@ public class GetDataProducts extends HttpServlet {
                 objConexion.ps.setString(7, request.getParameter("descripcion"));
                 objConexion.ps.setString(8, request.getParameter("ubicacion"));
                 objConexion.ps.setString(9, request.getParameter("unidad"));
-                objConexion.ps.setString(10, request.getParameter("cantidadAlmacen"));
+                objConexion.ps.setString(10, ( "[0-9]+".matches(request.getParameter("cantidadAlmacen")) )? request.getParameter("cantidadAlmacen") : "0" );
                 objConexion.ps.setString(11, request.getParameter("costo"));
-                objConexion.ps.setString(12, request.getParameter("precioPublico"));
-                objConexion.ps.setString(13, request.getParameter("precioSocio"));
+                objConexion.ps.setString(12, ( "[0-9]+".matches(request.getParameter("precioPublico")) )? request.getParameter("precioPublico") : "0" );
+                objConexion.ps.setString(13, ( "[0-9]+".matches(request.getParameter("precioSocio")) )? request.getParameter("precioSocio") : "0" );
                 
                 int r = objConexion.executeUpdate();
 

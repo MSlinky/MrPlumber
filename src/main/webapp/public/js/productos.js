@@ -9,6 +9,7 @@ function enviar_ajax(datos, link, callBack) {
             NProgress.done();
         },
         error: function(request, error) {
+            alert("Error ingresar la informacion obligatoria");
             console.log([request, error]);
         }
     });
@@ -26,8 +27,8 @@ function actTableCat(response) {
     $('#datatable-categorias').DataTable().clear().draw();
 
     let info = [];
-    let select = '<select class="form-control" name="categoria">';
-    select += '<option value="-1" >-</option>';
+    let select = '<select class="form-control" name="categoria" required>';
+    select += '<option value="" >-</option>';
     for (let i = 0; i < response.length; i++) {
         info = info.concat({
             0: response[i]['nombre'],
