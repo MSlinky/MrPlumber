@@ -90,7 +90,7 @@ function ciudad(estado, ciudad) {
     if (estado != 0) {
         enviar_ajax("action=ciudad&ciudad=" + estado, "GetDataClient", function(responseCity) {
             let select = '<select id="ciudad" class="form-control" name="ciudad" required>';
-            select += '<option value="-1" >Selecciona una ciudad</option>';
+            select += '<option value="" >Selecciona una ciudad</option>';
             for (let i = 0; i < responseCity.length; i++) {
                 if (responseCity[i]['id'] == ciudad) {
                     select += '<option value="' + responseCity[i]['id'] + '" selected >' + responseCity[i]['nombre'] + '</option>';
@@ -176,7 +176,7 @@ $(window).ready(function() {
 
     enviar_ajax("action=estados", "GetDataClient", function(response) {
         let select = '<select id="estados" class="form-control" name="estado" required>';
-        select += '<option value="-1" >Selecciona un estado</option>';
+        select += '<option value="" >Selecciona un estado</option>';
         for (let i = 0; i < response.length; i++) {
             select += '<option value="' + response[i]['id'] + '" >' + response[i]['nombre'] + '</option>';
         }
