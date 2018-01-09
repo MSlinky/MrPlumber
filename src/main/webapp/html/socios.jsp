@@ -154,7 +154,7 @@
                     </div>
                     <div class="form-group col-md-4 col-sm-8 col-xs-12">
                         <label class="control-label" for="first-name">Apellido<span class="required">*</span></label>
-                        <input type="text" class="form-control" name="apellido" placeholder="Apellido">
+                        <input type="text" class="form-control" name="apellido" placeholder="Apellido" required="required">
                     </div>
                     <div class="form-group col-md-4 col-sm-8 col-xs-12">
                         <label class="control-label" for="first-name">Telefono</label>
@@ -180,16 +180,16 @@
                     <div class="form-group col-md-4 col-sm-8 col-xs-12">
                         <label class="control-label" for="first-name">Estado<span class="required">*</span></label>
                         <div id="estadoSelect">
-                            <select class="form-control" name="estado">
-                                <option value="-1" >Selecciona un estado</option>
+                            <select class="form-control" name="estado" required>
+                                <option value="" >Selecciona un estado</option>
                             </select>
                         </div>
                     </div>
                     <div class="form-group col-md-4 col-sm-8 col-xs-12">
                         <label class="control-label" for="first-name">Ciudad<span class="required">*</span></label>
                         <div id="ciudadSelect">
-                            <select class="form-control" name="ciudad">
-                                <option value="-1" >Selecciona una ciudad</option>
+                            <select class="form-control" name="ciudad" required>
+                                <option value="" >Selecciona una ciudad</option>
                             </select>
                         </div>
                     </div>
