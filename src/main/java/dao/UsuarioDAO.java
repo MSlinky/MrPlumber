@@ -39,22 +39,7 @@ public class UsuarioDAO {
            System.out.println("Valores vacios");
            System.out.println(e);
         }return null;
-    }
-    
-    public List<Usuario> getAllUsuario(){
-        //Retorna un objeto persona que tenga el id que mandamos en los parametros
-        
-        try{
-            List <Usuario> usr = (List <Usuario>)session.createCriteria(Usuario.class).list();
-            return usr;
-        }
-        catch(ClassCastException e){
-            
-           System.out.println("Valores vacios");
-           System.out.println(e);
-        }return null;
-    }
-    
+    }  
     
     public Usuario getUsuarioById(int id){
         //Retorna un objeto persona que tenga el id que mandamos en los parametros
@@ -74,11 +59,6 @@ public class UsuarioDAO {
              return false;
          }      
     }
-<<<<<<< HEAD
-    
-        
-=======
->>>>>>> Back
     public boolean saveEvento(String correo,String clave){
        Usuario usuario = new Usuario();
        usuario.setCorreo(correo);
@@ -99,8 +79,4 @@ public class UsuarioDAO {
         }
         return false;
    }
-<<<<<<< HEAD
-=======
-    
->>>>>>> Back
 }

@@ -48,23 +48,6 @@ public class EventosDAO {
        }
        return null;
    }
-<<<<<<< HEAD
-      public List<Eventos> getToday(String date){
-           
-       //Transaction tx = session.beginTransaction();  
-       try{
-           List<Eventos> listaDeEventos = (List<Eventos>)session.createCriteria(Eventos.class).list();
-           return listaDeEventos;
-       }catch(ClassCastException e){
-           System.out.println("Valores vacios");
-           System.out.println(e);
-       }finally{
-         // tx.commit();
-       }
-       return null;
-   }
-=======
-   
     public String getToday(String date){
         
         String query = "SELECT * FROM zbxv4rd7u4k5zprr.Eventos WHERE StartDate LIKE '"+ date +"%'";
@@ -75,7 +58,6 @@ public class EventosDAO {
         return j.ListToArrayJson( sql.list());
    }
    
->>>>>>> Back
    public boolean saveEvento(int id,String name,String location,String text,String startDate,String endDate){
        Eventos evento = new Eventos();
        evento.setIdEventos(id);
