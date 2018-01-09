@@ -18,9 +18,9 @@ function ajax() {
         url: "GetDataEventToday",
         type: 'POST',
         success: function (data) {
-            console.log(data);
-            console.log(data.data.length);
-             $("#NoAlertas").html(data.data.length);
+            data = JSON.parse(data.data);
+            console.log(data.length);
+             $("#NoAlertas").html(data.length);
         
         },
         error: function (request, error) {

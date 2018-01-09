@@ -101,6 +101,9 @@ public class GetDataEventToday extends HttpServlet {
             PrintWriter out = response.getWriter();
             out.print(json.toString());
         }
+        else{
+            
+        }
     }
 
     /**

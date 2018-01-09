@@ -13,6 +13,8 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import model.Json;
+import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.criterion.Conjunction;
@@ -47,38 +49,14 @@ public class EventosDAO {
        return null;
    }
    
-    public List<Eventos> getToday(String date){
-           
-       
-        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-YYYY");
-        String myDate = date;
-        // Create date 17-04-2011 - 00h00
-        Date minDate = null;
-         try {
-            minDate = formatter.parse(myDate);
-        }catch (ParseException ex) {
-           Logger.getLogger(EventosDAO.class.getName()).log(Level.SEVERE, null, ex);
-        } 
-        // Create date 18-04-2011 - 00h00 
-        // -> We take the 1st date and add it 1 day in millisecond thanks to a useful and not so known class
-        Date maxDate = new Date(minDate.getTime() + TimeUnit.DAYS.toMillis(1));
-        System.out.println(minDate);
-        System.out.println(maxDate);
-        System.out.println("____");
-        try{
-        List<Eventos> listaDeEventos = (List<Eventos>)session.createCriteria(Eventos.class)
-                   .add(Restrictions.ge("StartDate", minDate ))
-                   .add(Restrictions.lt("StartDate", maxDate ))
-                   .list();
-            System.out.println("return");
-           return listaDeEventos;
-       }catch(ClassCastException e){
-           System.out.println("Valores vacios");
-           System.out.println(e);
-       }finally{
-         // (Usuario)session.createCriteria(Usuario.class).add(Restrictions.eq("clave", clave)).uniqueResult();
-       }
-       return null;
+    public String getToday(String date){
+        
+        String query = "SELECT * FROM zbxv4rd7u4k5zprr.Eventos WHERE StartDate LIKE '"+ date +"%'";
+        System.out.println(query);
+        SQLQuery sql = session.createSQLQuery(query);
+        
+        Json j = new Json();
+        return j.ListToArrayJson( sql.list());
    }
    
    public boolean saveEvento(int id,String name,String location,String text,String startDate,String endDate){
