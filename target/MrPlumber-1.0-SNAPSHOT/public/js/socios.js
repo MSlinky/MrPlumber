@@ -62,8 +62,8 @@ function actTableEsp(response){
     $('#datatable-especialidad').DataTable().clear().draw();
 
     let info = [];
-    let select = '<select class="form-control" name="especialidad">';
-        select += '<option value="-1" >Selecciona una especialidad</option>';
+    let select = '<select class="form-control" name="especialidad" required>';
+        select += '<option value="" >Selecciona una especialidad</option>';
     for (let i = 0; i < response.length; i++) {
         info = info.concat(
             {
@@ -182,8 +182,8 @@ function buttonEvent(event){
 function ciudad(estado,ciudad){
     if(estado!=0){
         enviar_ajax("action=ciudad&ciudad="+estado,"GetDataAssociate",function(responseCity){
-            let select = '<select id="ciudad" class="form-control" name="ciudad">';
-                select += '<option value="-1" >Selecciona una ciudad</option>';
+            let select = '<select id="ciudad" class="form-control" name="ciudad" required >';
+                select += '<option value="" >Selecciona una ciudad</option>';
             for (let i = 0; i < responseCity.length; i++) {
                 if(responseCity[i]['id']==ciudad){
                     select += '<option value="'+responseCity[i]['id']+'" selected >'+responseCity[i]['nombre']+'</option>';
@@ -279,8 +279,8 @@ $(window).ready(function(){
     enviar_ajax("action=actualizarSocio","GetDataAssociate",actTableSoc);
 
     enviar_ajax("action=estados","GetDataAssociate",function(response){
-        let select = '<select id="estados" class="form-control" name="estado">';
-            select += '<option value="-1" >Selecciona un estado</option>';
+        let select = '<select id="estados" class="form-control" name="estado" required>';
+            select += '<option value="" >Selecciona un estado</option>';
         for (let i = 0; i < response.length; i++) {
             select += '<option value="'+response[i]['id']+'" >'+response[i]['nombre']+'</option>';
         }

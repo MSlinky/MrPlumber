@@ -26,34 +26,23 @@ function sendForm(form, link, callBack) {
 }
 
 function actTableCli(response) {
-    $('#datatable-clientes').DataTable().clear().draw();
+    $('#datatable-usuarios').DataTable().clear().draw();
     console.log(response);
     let info = [];
-    /*for (let i = 0; i < response.length; i++) {
+    for (let i = 0; i < response.data.length; i++) {
         info = info.concat({
             0: "",
-            1: '<button id="' + response[i]['id'] + '" type="button" name="EliminarCliente" class="buttonEventUse btn btn-danger glyphicon glyphicon-remove"></button><button id="' + response[i]['id'] + '" type="button" name="ModificarClienteConsulta" class="buttonEventCli btn btn-info glyphicon glyphicon-pencil"></button>',
-            2: response[i]['nombre'],
-            3: response[i]['apellido'],
-            4: response[i]['telefono'],
-            5: response[i]['celular'],
-            6: response[i]['email'],
-            7: response[i]['rfc'],
-            8: response[i]['estado'],
-            9: response[i]['ciudad'],
-            10: response[i]['colonia'],
-            11: response[i]['calle'],
-            12: response[i]['cp'],
-            13: response[i]['referencia'],
-            14: response[i]['origen']
+            1: '<button id="' + response.data[i]['id'] + '" type="button" name="EliminarUsuario" class="buttonEventUse btn btn-danger glyphicon glyphicon-remove"></button><button id="' + response.data[i]['id'] + '" type="button" name="ModificarUsuario" class="buttonEventUse btn btn-info glyphicon glyphicon-pencil"></button>',
+            2: response.data[i]['correo'],
+            3: response.data[i]['tipoUsuario']['nombreTipoUsuario']
         });
-    }*/
+    }
 
-    $('#datatable-clientes').DataTable().rows.add(info).draw();
+    $('#datatable-usuarios').DataTable().rows.add(info).draw();
 }
 
 function buttonEvent(event) {
-    if(event.target.name == "EliminarCliente" && !confirm("Eliminar")){
+    if(event.target.name == "EliminarUsuario" && !confirm("Eliminar")){
         return false;
     }
     enviar_ajax("action=gestionar&table=" + event.target.name + "&id=" + event.target.id, "GetDataClient", function(txt) {
@@ -67,7 +56,7 @@ function buttonEvent(event) {
 
             $('#form_clientes').find('#id')[0].value = txt[0]['id'];
 
-            $('#form_clientes')[0][0].value = txt[0]['nombre'];
+            /*$('#form_clientes')[0][0].value = txt[0]['nombre'];
             $('#form_clientes')[0][1].value = txt[0]['apellido'];
             $('#form_clientes')[0][2].value = txt[0]['telefono'];
             $('#form_clientes')[0][3].value = txt[0]['celular'];
@@ -79,7 +68,7 @@ function buttonEvent(event) {
             $('#form_clientes')[0][9].value = txt[0]['calle'];
             $('#form_clientes')[0][10].value = txt[0]['cp'];
             $('#form_clientes')[0][11].value = txt[0]['referencia'];
-            $('#form_clientes')[0][12].value = txt[0]['origen'];
+            $('#form_clientes')[0][12].value = txt[0]['origen'];*/
         }
     });
 }

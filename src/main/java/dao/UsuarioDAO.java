@@ -39,7 +39,9 @@ public class UsuarioDAO {
            System.out.println("Valores vacios");
            System.out.println(e);
         }return null;
-    }  
+    }
+    
+    
     
     public Usuario getUsuarioById(int id){
         //Retorna un objeto persona que tenga el id que mandamos en los parametros
@@ -78,5 +80,5 @@ public class UsuarioDAO {
             
         }
         return false;
-   }
+    }
 }

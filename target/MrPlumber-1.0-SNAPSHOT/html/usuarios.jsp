@@ -80,11 +80,10 @@
                                 <table id="datatable-usuarios" class="display table table-striped table-bordered" cellspacing="0" width="100%">
                                     <thead>
                                         <tr>
-                                            <th class="all"></th>
-                                            <th style="width: 10px;">Configuración</th>
-                                            <th>Correo</th>
-                                            <th>Contraseña</th>
-                                            <th class="none">Tipo Usuario</th>
+                                            <th class="all" style="width: 10px;"></th>
+                                            <th style="width: 100px;">Configuración</th>
+                                            <th style="width: 100px;">Correo</th>
+                                            <th style="width: 100px;">Tipo Usuario</th>
                                         </tr>
                                     </thead>
                                     <tbody id="table_usuarios">
