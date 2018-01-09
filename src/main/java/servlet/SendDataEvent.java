@@ -72,6 +72,9 @@ public class SendDataEvent extends HttpServlet {
                 endDate + "\n" 
                 );
         
+        EventosDAO evento = new EventosDAO(session);
+        evento.saveEvento(id, name, location, text, startDate, endDate);
+        
         //System.out.println(array.getJSONObject(0).get("id").toString());
         /*HttpSession misession = (HttpSession) request.getSession();
         
