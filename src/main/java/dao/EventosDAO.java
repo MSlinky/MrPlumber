@@ -20,7 +20,7 @@ import org.hibernate.Transaction;
 import org.hibernate.criterion.Conjunction;
 import org.hibernate.criterion.Restrictions;
 import pojo.Eventos;
-
+//lo que sea
 /**
  *
  * @author marcocameros
