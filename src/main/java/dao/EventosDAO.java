@@ -6,11 +6,21 @@
 package dao;
 
 import hbm.NewHibernateUtil;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import model.Json;
+import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.criterion.Conjunction;
+import org.hibernate.criterion.Restrictions;
 import pojo.Eventos;
-
+//lo que sea
 /**
  *
  * @author marcocameros
@@ -38,6 +48,7 @@ public class EventosDAO {
        }
        return null;
    }
+<<<<<<< HEAD
       public List<Eventos> getToday(String date){
            
        //Transaction tx = session.beginTransaction();  
@@ -52,6 +63,19 @@ public class EventosDAO {
        }
        return null;
    }
+=======
+   
+    public String getToday(String date){
+        
+        String query = "SELECT * FROM zbxv4rd7u4k5zprr.Eventos WHERE StartDate LIKE '"+ date +"%'";
+        System.out.println(query);
+        SQLQuery sql = session.createSQLQuery(query);
+        
+        Json j = new Json();
+        return j.ListToArrayJson( sql.list());
+   }
+   
+>>>>>>> Back
    public boolean saveEvento(int id,String name,String location,String text,String startDate,String endDate){
        Eventos evento = new Eventos();
        evento.setIdEventos(id);
